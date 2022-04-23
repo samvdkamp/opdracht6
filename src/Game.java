@@ -3,13 +3,13 @@ import java.lang.Math;
 
 public class Game {
 
-    String naam;
-    int releaseJaar;
-    double nieuwPrijs;
+    private String naam;
+    private int releaseJaar;
+    private double nieuwPrijs;
 
     public Game(String nm, int rJ, double nwpr){
         naam = nm;
-        rJ = releaseJaar;
+        releaseJaar = rJ;
         nieuwPrijs = nwpr;
     }
 
@@ -18,7 +18,7 @@ public class Game {
     }
 
     public double huidigeWaarde(){
-        return nieuwPrijs * Math.pow(0.7, 1);
+        return nieuwPrijs * Math.pow(0.7, java.time.LocalDate.now().getYear() - releaseJaar);
     }
 
     public boolean equals(Game andereObject){

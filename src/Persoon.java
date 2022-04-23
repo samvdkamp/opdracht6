@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Persoon {
 
-    String naam;
-    double budget;
-    ArrayList<Game> games = new ArrayList<Game>();
+    private String naam;
+    private double budget;
+    private ArrayList<Game> games = new ArrayList<Game>();
 
     public Persoon(String nm, double bud){
         naam = nm;
@@ -48,6 +48,12 @@ public class Persoon {
 
 
     public String toString(){
-        return naam + "heeft een budget van " + budget + " en bezit de volgende games: \n" + games.toString();
+        String library = "";
+        for(Game game : games){
+            library += game.toString() + "\n";
+        }
+
+
+        return naam + "heeft een budget van " + budget + " en bezit de volgende games: \n" + library;
     }
 }
